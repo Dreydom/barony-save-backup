@@ -15,7 +15,7 @@ A Python script to automatically back up and restore Barony `.baronysave` files.
 
 Knowing how to:
 1. Read.
-2. Run Python.
+2. Run Python (optional, .exe file in Releases).
 
 ## Installation
 
