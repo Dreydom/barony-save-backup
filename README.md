@@ -14,8 +14,8 @@ A Python script to automatically back up and restore Barony `.baronysave` files.
 ## Requirements
 
 Knowing how to:
-1. Read
-2. Run Python
+1. Read.
+2. Run Python.
 
 ## Installation
 
@@ -67,3 +67,7 @@ Mystic-Mungus-2206257080-skeleton-conjurer-lvl1-floor1-0-2025-04-18_11-27-35.bar
    - **New or Modified Saves**: Triggers a new backup (replacing the old one for that run).
    - **Deleted Saves**: Assumes death, restores the backup for that run.
 3. **Backup Management**: Only one backup is kept per `lobbykey`, so disk usage stays limited.
+
+## Known Issues
+
+1. If you hit "Restart" in-game after dying, it will rewrite a `savegame[N].baronysave` file that got restored. To fix that, manually fetch the backup with your old character and save it as `savegame[N+1].baronysave` in the save folder.
