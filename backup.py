@@ -10,11 +10,17 @@ Deleted saves (on death) are automatically restored.
 import json
 import logging
 import shutil
+import sys
 import time
 from pathlib import Path
 
 # === Configuration ===
-SAVE_DIR = Path(__file__).resolve().parent
+if getattr(sys, 'frozen', False):
+    # running as PyInstaller exe
+    SAVE_DIR = Path(sys.executable).parent
+else:
+    # running as a normal .py
+    SAVE_DIR = Path(__file__).parent
 BACKUP_DIR = SAVE_DIR / "backups"
 LOG_LEVEL = logging.INFO
 POLL_INTERVAL = 5.0  # seconds between checks
